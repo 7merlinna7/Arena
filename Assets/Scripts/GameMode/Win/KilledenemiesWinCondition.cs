@@ -5,11 +5,11 @@ public class KilledenemiesWinCondition : IWinningCondition, IDisposable
     public event Action Win;
 
     private int _killEnemiesToWin;
-    private EnemyCounter _enemyCounter;
+    private IReadOnlyEnemyCounter _enemyCounter;
     private int _enemiesKilled;
     public int EnemiesKilled => _enemiesKilled;
 
-    public KilledenemiesWinCondition(int killEnemiesToWin, EnemyCounter enemyCounter)
+    public KilledenemiesWinCondition(int killEnemiesToWin, IReadOnlyEnemyCounter enemyCounter)
     {
         _killEnemiesToWin = killEnemiesToWin;
         _enemyCounter = enemyCounter;

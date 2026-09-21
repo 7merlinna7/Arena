@@ -5,9 +5,9 @@ public class OutOfEnemiesDefeatCondition : IDefeatCondition
     public event Action Defeat;
 
     private int _maxSpawnedEnemies;
-    private EnemyCounter _enemyCounter;
+    private IReadOnlyEnemyCounter _enemyCounter;
 
-    public OutOfEnemiesDefeatCondition(int maxSpawnedEnemies, EnemyCounter enemyCounter)
+    public OutOfEnemiesDefeatCondition(int maxSpawnedEnemies, IReadOnlyEnemyCounter enemyCounter)
     {
         _maxSpawnedEnemies = maxSpawnedEnemies;
         _enemyCounter = enemyCounter;

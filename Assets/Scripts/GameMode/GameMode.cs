@@ -23,7 +23,7 @@ public class GameMode
 
     private EnemySpawner _enemySpawner;
     private EnemyCounter _enemyCounter = new();
-    public EnemyCounter EnemyCounter => _enemyCounter;
+    public IReadOnlyEnemyCounter EnemyCounter => _enemyCounter;
 
     public GameMode(LevelConfig levelConfig, EnemyConfig enemyConfig)
     {
