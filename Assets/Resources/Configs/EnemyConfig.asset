@@ -17,9 +17,11 @@ MonoBehaviour:
   <MoveSpeed>k__BackingField: 5
   <RotationSpeed>k__BackingField: 800
   <TimeToChangeDirection>k__BackingField: 1
-  <TimeToSpawn>k__BackingField: 1
+  <TimeToSpawn>k__BackingField: 4
+  <Damage>k__BackingField: 10
+  <Health>k__BackingField: 10
   <SpawnPoints>k__BackingField:
-  - {x: 10, y: 0, z: 8}
-  - {x: 10, y: 0, z: -4}
-  - {x: 18, y: 0, z: -4}
-  - {x: 18, y: 0, z: 4}
+  - {x: -18.58, y: 0, z: 7.9799995}
+  - {x: -18.58, y: 0, z: -4.1500015}
+  - {x: 10.350001, y: 0, z: -4.1500015}
+  - {x: 10.350001, y: 0, z: 8.150002}

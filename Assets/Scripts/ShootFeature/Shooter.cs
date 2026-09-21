@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooter 
+public class Shooter :MonoBehaviour
 {
+    [SerializeField] Bullet _bullet;
     public void Shoot()
     {
-
+        Bullet bullet = (Instantiate(_bullet, transform.position, Quaternion.identity, null)).GetComponent<Bullet>();
+        bullet.Shoot(transform.forward);
     }
 }

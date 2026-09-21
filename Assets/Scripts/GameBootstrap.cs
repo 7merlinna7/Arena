@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameBootstrap : MonoBehaviour
 {
-    [SerializeField] private PlayerConfig _playerConfig;
-    [SerializeField] private EnemyConfig _enemyConfig;
+    [SerializeField] private TargetFollower _mainCamera;
+    [SerializeField] private GameModDefeatType _DefeatType;
+    [SerializeField] private GameModeWinType _WinType;
 
-    private PlayerSpawner _playerSpawner;
-    private EnemySpawner _enemySpawner;
+    private GameCycle _gameCycle;
 
     private void Awake()
     {
-        _playerSpawner = new PlayerSpawner(_playerConfig);
-        _playerSpawner.Spawn(Vector3.zero);
+        _gameCycle = new GameCycle();
+        _gameCycle.Start(_mainCamera,_DefeatType,_WinType,this);
+    }
 
-        _enemySpawner = new EnemySpawner(_enemyConfig,this);
-        _enemySpawner.Start();
+    private void Update()
+    {
+        _gameCycle.Update(Time.deltaTime);
     }
 }

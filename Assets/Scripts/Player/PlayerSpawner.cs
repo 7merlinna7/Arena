@@ -2,21 +2,12 @@ using UnityEngine;
 
 public class PlayerSpawner
 {
-    private PlayerConfig _config;
-
-
-    public PlayerSpawner(PlayerConfig config)
+    public Player Spawn(PlayerConfig config, Vector3 position)
     {
-        _config = config;
-    }
-
-    public GameObject Spawn(Vector3 position)
-    {
-        GameObject instance = Object.Instantiate(_config.Prefab.gameObject, position, Quaternion.identity, null);
-
+        Player player = Object.Instantiate(config.Prefab, position, Quaternion.identity, null);
         PlayerBootstrap playerBootstrap = new PlayerBootstrap();
-        playerBootstrap.StartPlayer(instance, _config);
+        playerBootstrap.StartPlayer(player, config);
 
-        return instance;
+        return player;
     }
 }

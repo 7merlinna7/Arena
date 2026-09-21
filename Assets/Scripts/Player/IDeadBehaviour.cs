@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IInitializable 
+public interface IDeadBehaviour 
 {
-    public void Initialize();
+    public bool IsDead {  get; }
 }

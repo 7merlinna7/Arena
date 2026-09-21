@@ -4,19 +4,17 @@ using UnityEngine;
 public class PlayerBootstrap 
 {
     private PlayerInput _playerInput;
-    private Player _player;
 
-    public void StartPlayer(GameObject playerGameObject,PlayerConfig playerConfig)
+    public void StartPlayer(Player player,PlayerConfig playerConfig)
     {
-        PlayerConfig config = playerConfig;
+        _playerInput = player.GetComponent<PlayerInput>();
+        Shooter shooter = player.GetComponentInChildren<Shooter>();
 
-        _player = playerGameObject.GetComponent<Player>();
-        _playerInput = playerGameObject.GetComponent<PlayerInput>();
+        Rotator rotator = new Rotator(playerConfig.RotationSpeed, player.transform);
+        Mover mover = new Mover(playerConfig.MoveSpeed, player.transform);
+        Health health = new Health(playerConfig.MaxHealth);
 
-        Rotator rotator = new Rotator(config.RotationSpeed, playerGameObject.transform);
-        Mover mover = new Mover(config.MoveSpeed, playerGameObject.transform);
-
-        _player.Initialize(mover,rotator);
-        _playerInput.Initialize(_player);
+        player.Initialize(mover,rotator,shooter,health);
+        _playerInput.Initialize(player);
     }
 }

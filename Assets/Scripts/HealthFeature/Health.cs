@@ -4,6 +4,8 @@ public class Health
 
     public int CurrentHealth { get; private set; }
 
+    public bool IsDead => CurrentHealth == 0;
+
     public Health(int maxHealth)
     {
         MaxHealth = maxHealth;

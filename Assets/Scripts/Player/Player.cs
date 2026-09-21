@@ -1,17 +1,24 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour,IDamageble
+[RequireComponent(typeof(PlayerInput))]
+public class Player : MonoBehaviour, IDamageble, IDeadBehaviour
 {
     private Mover _mover;
     private Rotator _rotator;
+    private Shooter _shooter;
+    private Health _health;
 
     public int Damage {  get; private set; }
     public bool CanMoving { get; private set; } = true;
 
-    public void Initialize(Mover mover,Rotator rotator)
+    public bool IsDead => _health.IsDead;
+
+    public void Initialize(Mover mover,Rotator rotator,Shooter shooter, Health health)
     {
         _mover = mover;
         _rotator = rotator;
+        _health = health;
+        _shooter = shooter;
     }
 
     public void Move(Vector3 direction)
@@ -25,13 +32,11 @@ public class Player : MonoBehaviour,IDamageble
 
     public void TakeDamage(int damage)
     {
-
+        _health.TakeDamage(damage);
+        Debug.Log("Health:" + _health.CurrentHealth);
     }
 
-    public void Shoot()
-    {
-
-    }
+    public void Shoot() => _shooter.Shoot();
 
     private void OnTriggerEnter(Collider other)
     {
