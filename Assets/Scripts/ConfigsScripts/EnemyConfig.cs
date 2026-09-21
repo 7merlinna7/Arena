@@ -9,7 +9,6 @@ public class EnemyConfig : ScriptableObject
     [field: SerializeField] public float MoveSpeed { get; private set; } = 15;
     [field: SerializeField] public float RotationSpeed { get; private set; } = 800;
     [field: SerializeField] public float TimeToChangeDirection { get; private set; } = 1f;
-    [field: SerializeField] public float TimeToSpawn { get; private set; } = 1f;
     [field: SerializeField] public int Damage { get; private set; } = 10;
     [field: SerializeField] public int Health { get; private set; } = 10;
 

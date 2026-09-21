@@ -39,7 +39,7 @@ public class GameMode
 
     public void Start(MonoBehaviour corutineRunner)
     {
-        _enemySpawner = new EnemySpawner(_enemyConfig,corutineRunner);
+        _enemySpawner = new EnemySpawner(_enemyConfig,corutineRunner,_levelConfig.TimeToSpawnEnemy);
         _enemySpawner.EnemySpawned +=RegisterEnemy;
 
         _enemySpawner.Start();

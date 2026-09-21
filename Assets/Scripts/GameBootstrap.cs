@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameBootstrap : MonoBehaviour
 {
     [SerializeField] private TargetFollower _mainCamera;
-    [SerializeField] private GameModDefeatType _DefeatType;
+    [SerializeField] private GameModeDefeatType _DefeatType;
     [SerializeField] private GameModeWinType _WinType;
 
     private GameCycle _gameCycle;

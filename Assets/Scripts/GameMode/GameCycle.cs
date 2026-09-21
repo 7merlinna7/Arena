@@ -14,7 +14,7 @@ public class GameCycle :IDisposable
     private IWinningCondition _winningCondition;
     private IDefeatCondition _defeatCondition;
 
-    public void Start(TargetFollower mainCamera, GameModDefeatType defeatType, GameModeWinType winType, MonoBehaviour corutineRunner)
+    public void Start(TargetFollower mainCamera, GameModeDefeatType defeatType, GameModeWinType winType, MonoBehaviour corutineRunner)
     {
         LoadConfigs();
         SetPlayer(mainCamera);
@@ -56,15 +56,15 @@ public class GameCycle :IDisposable
         _levelConfig = Resources.Load<LevelConfig>("Configs/LevelConfig");
     }
 
-    private void SetLevelConditions (GameModDefeatType defeatType, GameModeWinType winType)
+    private void SetLevelConditions (GameModeDefeatType defeatType, GameModeWinType winType)
     {
         switch (defeatType)
         {
-            case GameModDefeatType.Death:
+            case GameModeDefeatType.Death:
                 _defeatCondition = new PlayerDeathDefeatCondition(_player);
                 break;
 
-            case GameModDefeatType.OutOfEnemies:
+            case GameModeDefeatType.OutOfEnemies:
                 _defeatCondition = new OutOfEnemiesDefeatCondition(_levelConfig.MaxSpawnedEnemies, _gameMode.EnemyCounter);
                 break;
         }

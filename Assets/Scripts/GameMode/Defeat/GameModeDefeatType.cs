@@ -1,4 +1,4 @@
-public enum GameModDefeatType 
+public enum GameModeDefeatType 
 {
     Death,
     OutOfEnemies

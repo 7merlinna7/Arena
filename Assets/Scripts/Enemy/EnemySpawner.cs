@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
-using Object = UnityEngine.Object;
 
 public class EnemySpawner 
 {
@@ -11,17 +10,18 @@ public class EnemySpawner
 
     private EnemyConfig _config;
     EnemyFactory _enemyFactory;
+
     private List<Vector3> _spawnPoints;
     private float _spawnTime;
     private MonoBehaviour _corutineRunner;
 
     private bool _isSpawning;
 
-    public EnemySpawner(EnemyConfig config,MonoBehaviour corutineRunner)
+    public EnemySpawner(EnemyConfig config,MonoBehaviour corutineRunner,float timeToSpawnEnemy)
     {
         _config = config;
         _spawnPoints = config.SpawnPoints;
-        _spawnTime = config.TimeToSpawn;
+        _spawnTime = timeToSpawnEnemy;
         _corutineRunner = corutineRunner;
         _enemyFactory = new();
     }

@@ -1,6 +1,3 @@
-using Unity.VisualScripting.FullSerializer;
-using UnityEngine;
-
 public class PlayerBootstrap 
 {
     private PlayerInput _playerInput;

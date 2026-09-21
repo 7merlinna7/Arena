@@ -11,13 +11,6 @@ public class Mover
         _characterTransform = characterTransform;
     }
 
-    //public void Move(Vector3 target, int direction)
-    //{
-    //    Vector3 moveDirection = GetDirectionToTarget(target);
-    //    Vector3 normalazedMoveDirection = moveDirection.normalized * (direction);
-    //    ProcessMoveToTarget(normalazedMoveDirection);
-    //}
-
     public void Move(Vector3 direction)
     {
         Vector3 normalazedMoveDirection = direction.normalized;
