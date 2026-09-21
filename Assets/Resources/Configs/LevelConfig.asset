@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LevelConfig
   m_EditorClassIdentifier: 
   <PlayerStartPosition>k__BackingField: {x: -4.12, y: 0, z: 2.9000015}
-  <TimeToWin>k__BackingField: 15
-  <MaxSpawnedEnemies>k__BackingField: 5
-  <KilledEnemiesCountToWin>k__BackingField: 5
   <TimeToSpawnEnemy>k__BackingField: 1
+  <TimeToWin>k__BackingField: 15
+  <MaxSpawnedEnemies>k__BackingField: 15
+  <KilledEnemiesCountToWin>k__BackingField: 5

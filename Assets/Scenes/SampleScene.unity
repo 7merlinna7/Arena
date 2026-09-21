@@ -1773,7 +1773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 330585548}
-  _DefeatType: 1
+  _DefeatType: 0
   _WinType: 1
 --- !u!4 &398774770
 Transform:
